@@ -115,6 +115,11 @@ router.delete('/quizzes/:quizId(\\d+)',
     quizController.adminOrAuthorRequired,
     quizController.destroy);
 
+router.get('/quizzes/randomplay',
+    quizController.random_play);
+router.get('/quizzes/randomcheck/:quizId(\\d+)',
+    quizController.randomcheck);
+
 router.get('/quizzes/:quizId(\\d+)/play',
     quizController.play);
 router.get('/quizzes/:quizId(\\d+)/check',
