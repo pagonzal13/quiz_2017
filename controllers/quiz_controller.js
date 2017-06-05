@@ -83,8 +83,8 @@ exports.randomcheck = function(req, res, next){
         req.session.random_play.resolved = req.session.random_play.resolved+1;
         score = req.session.random_play.resolved;
     }else{
-        score = req.session.random_play.resolved;
         req.session.random_play.resolved = 0;
+        score = req.session.random_play.resolved;
         req.session.random_play.used = [];
     }
     res.render('quizzes/random_result',{
