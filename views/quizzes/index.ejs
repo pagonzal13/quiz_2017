@@ -18,7 +18,7 @@
             <a href="/quizzes/<%= quiz.id %>/play"><%= quiz.question %></a>
         </td>
         <td colspan="2">
-            <span id="autor"> (<%= quiz.Author ? quiz.Author.username : "Anómino" %>) </span>
+            <span id="autor"><%= quiz.Author ? quiz.Author.username : "Anómino" %></span>
         </td>
 
         <% if (session.user) { %>
