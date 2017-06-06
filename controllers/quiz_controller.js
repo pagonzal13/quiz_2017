@@ -276,6 +276,15 @@ exports.random_play = function(req, res, next){
 
 
 exports.randomcheck = function(req, res, next){
+    if(!req.session.random_play){ 
+        var variablesRP = {};
+        req.session.random_play = variablesRP;
+        var veces = 0;
+        req.session.random_play.resolved = veces;
+        var idsViejos = [];
+        req.session.random_play.used = idsViejos;
+    }
+    
     var answer = req.query.answer || "";
     var result = answer.toLowerCase().trim() === req.quiz.answer.toLowerCase().trim();
     var score;
