@@ -7,7 +7,7 @@
         <li>
 
             <% if (tip.accepted ||
-                    (session.user && (session.user.isAdmin || (quizAuthorId && quizAuthorId === session.user.id)))) { %>
+                    (session.user && (session.user.isAdmin || (quizAuthorId && quizAuthorId === session.user.id) || (tip.AuthorId && tip.AuthorId === session.user.id)))) { %>
                 <div class="right">
                         <span id="autor"> (by <%= tip.Author ? tip.Author.username : "Anómino" %>) </span>
                 </div>
@@ -22,7 +22,7 @@
 
             <% } %>
 
-            <% if ((session.user && (session.user.isAdmin || (quizAuthorId && quizAuthorId === session.user.id)))) { %>
+            <% if ((session.user && (session.user.isAdmin || (quizAuthorId && quizAuthorId === session.user.id) || (tip.AuthorId && tip.AuthorId === session.user.id)))) { %>
 
                 <a href="/quizzes/<%= quizId %>/tips/<%= tip.id %>?_method=DELETE"><button>Borrar</button></a>
 
